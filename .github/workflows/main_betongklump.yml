@@ -10,18 +10,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
+   deploy:
+    runs-on: windows-latest
+    
     steps:
-      # Step 1: Check out the repository
       - uses: actions/checkout@v4
-
-      # Step 2: Deploy static files to Azure Web App
+      
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'betongklump'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C315F120674B4ECC9B6D93C83749977F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9191A41E50E4422FB36DEC2F6A7CC9B4 }}
